@@ -1,0 +1,17 @@
+{
+    "name": "dsw/shop",
+    "description": "Trabajo de DSW sobre una tienda virtual",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Dsw\\Shop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ferrokwastaken",
+            "email": "israelduquesilva@hotmail.com"
+        }
+    ],
+    "require": {}
+}
