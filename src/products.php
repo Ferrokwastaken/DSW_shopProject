@@ -1,8 +1,11 @@
 <?php
-class Products {
+
+use Dsw\Shop\Taxes;
+
+class Products implements Taxes {
   public $name;
   public $basePrice;
-  public $tax;
+  public $tax = 0.07;
   public $weight;
   public $volume;
   public $expiredDate;
@@ -12,21 +15,30 @@ class Products {
   {
     $this->name = $name;
     $this->basePrice = $basePrice;
+    $this->tax = $tax;
     $this->weight = $weight;
     $this->volume = $volume;
     $this->expiredDate = $expiredDate;
     $this->manufactor = $manufactor;
   }
 
-  public function shippingCost($basePrice, $weight, $volume) : Float
+  public function shippingCost() // ($basePrice, $weight, $volume) : Float
   {
     $costWeight = ($this->weight * 0.0002);
     $costVolume = floor($this->volume/1000);
-    return (2 + $costWeight + $costWeight);
+    return (2 + $costWeight + $costVolume);
   }
 
+  public function setTax($tax)
+  {
+    $this->tax = $tax;
+  }
 
+  public function calculatedCost()
+  {
+    return ($this->basePrice * $this->tax);
+  }
   public function toString() {
-    echo "Producto: $this->name, Marca: $this->manufactor, Precio: "  . "€, Coste Envío: " . $this->shippingCost($this->basePrice, $this->weight, $this->volume) . "€\n";
+    echo "Producto: $this->name, Marca: $this->manufactor, Precio: " . $this->calculatedCost() . "€, Coste Envío: " . $this->shippingCost($this->basePrice, $this->weight, $this->volume) . "€\n";
 }
 }
