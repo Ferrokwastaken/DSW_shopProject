@@ -2,9 +2,9 @@
   namespace Dsw\Shop;
 
   class MixedShop extends Events implements MixedServices {
-    function __construct($name, $basePrice, $tax, $eventExecutionDate)
+    function __construct($name, $basePrice, $eventExecutionDate)
     {
-      parent::__construct($name, $basePrice, $tax, $eventExecutionDate);
+      parent::__construct($name, $basePrice, $eventExecutionDate);
     }
 
     function registerSessions($numberSessions): int

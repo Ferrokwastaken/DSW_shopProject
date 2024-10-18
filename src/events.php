@@ -4,9 +4,9 @@
   class Events extends Services {
     private $eventExecutionDate;
 
-    function __construct($name, $basePrice, $tax, $eventExecutionDate)
+    function __construct($name, $basePrice, $eventExecutionDate)
     {
-      parent::__construct($name, $basePrice, $tax);
+      parent::__construct($name, $basePrice);
       $this->eventExecutionDate = $eventExecutionDate;
     }
 

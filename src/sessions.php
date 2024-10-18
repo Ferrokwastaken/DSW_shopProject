@@ -4,9 +4,9 @@
   class Sessions extends Services implements MixedServices {
     private $numberSessions;
 
-    function __construct($name, $basePrice, $tax, $numberSessions)
+    function __construct($name, $basePrice, $numberSessions)
     {
-      parent::__construct($name, $basePrice, $tax);
+      parent::__construct($name, $basePrice);
       $this->numberSessions = $numberSessions;
     }
 
