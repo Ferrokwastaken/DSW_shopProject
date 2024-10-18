@@ -14,7 +14,9 @@
     }
 
     function setTax($tax) {
-      //Code...
+      if ($tax > 0) {
+        $this->tax = $tax;
+      }
     }
 
     function calculatedCost($tax, $basePrice) {
