@@ -3,6 +3,7 @@
 
   interface Taxes {
     public function setTax($tax);
-    public function calculatedCost();
+    public function calculatedCost($tax, $basePrice);
+    //Probando
   }
 ?>
