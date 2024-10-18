@@ -18,8 +18,7 @@ class Products {
     $this->manufactor = $manufactor;
   }
 
-  public function 
-  public function shippingCost($basePrice, $weight, $volume) : Float 
+  public function shippingCost($basePrice, $weight, $volume) : Float
   {
     $costWeight = ($this->weight * 0.0002);
     $costVolume = floor($this->volume/1000);
