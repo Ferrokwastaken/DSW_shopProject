@@ -17,7 +17,7 @@
       //Code...
     }
 
-    function calculatedCost() {
+    function calculatedCost($tax, $basePrice) {
       //Code...
     }
   }
