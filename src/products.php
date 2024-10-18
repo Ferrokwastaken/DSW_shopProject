@@ -1,24 +1,15 @@
 <?php
 
-use Dsw\Shop\Taxes;
-
-class Products implements Taxes {
-  public $name;
-  public $basePrice;
-  public $tax = 0.07;
+class Products extends Element {
   public $weight;
   public $volume;
-  public $expiredDate;
   public $manufactor;
 
-  public function __construct($name, $basePrice, $tax, $weight, $volume, $expiredDate, $manufactor)
+  public function __construct($name, $basePrice, $weight, $volume, $manufactor)
   {
-    $this->name = $name;
-    $this->basePrice = $basePrice;
-    $this->tax = $tax;
+    parent::__construct($name, $basePrice);
     $this->weight = $weight;
     $this->volume = $volume;
-    $this->expiredDate = $expiredDate;
     $this->manufactor = $manufactor;
   }
 
@@ -29,16 +20,7 @@ class Products implements Taxes {
     return (2 + $costWeight + $costVolume);
   }
 
-  public function setTax($tax)
-  {
-    $this->tax = $tax;
-  }
-
-  public function calculatedCost()
-  {
-    return ($this->basePrice * $this->tax);
-  }
   public function toString() {
-    echo "Producto: $this->name, Marca: $this->manufactor, Precio: " . $this->calculatedCost() . "€, Coste Envío: " . $this->shippingCost($this->basePrice, $this->weight, $this->volume) . "€\n";
+    echo "Producto: $this->name, Marca: $this->manufactor, Precio: " . $this->getFinalPrice() . "€, Coste Envío: " . $this->shippingCost() . "€\n";
 }
 }
