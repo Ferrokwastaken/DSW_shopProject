@@ -1,4 +1,8 @@
 <?php
+    namespace Dsw\Shop;
+
+    use Element;
+
 class Shop {
     private $elements = [];
 
@@ -14,7 +18,7 @@ class Shop {
 
     public function showServices() {
         foreach ($this->elements as $element) {
-            if ($elemento instanceof Services) {
+            if ($element instanceof Services) {
                 $element->toString();
             }
         }

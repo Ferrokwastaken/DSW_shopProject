@@ -1,6 +1,8 @@
 <?php
   namespace Dsw\Shop;
 
+  use DateTime;
+
   class MixedServices extends Events {
     private $totalSessions;
     private $remainingSessiones;

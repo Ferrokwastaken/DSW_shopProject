@@ -1,6 +1,8 @@
 <?php
   namespace Dsw\Shop;
 
+  use DateTime;
+
   class Events extends Services {
     private $eventExecutionDate;
 
@@ -25,7 +27,7 @@
 
     public function toString() {
       $state= (new DateTime() > $this->eventExecutionDate) ? "Ya ocurrió" : "Próximo";
-        echo "Evento: $this->name, Precio: " . $this->getFinalPrice() . "€, Estado: $state\n";
+        echo "Evento: $this->name, Precio: " . $this->getFinalPrice() . "€, Estado: $state\n<br>";
     }
   }
 ?>

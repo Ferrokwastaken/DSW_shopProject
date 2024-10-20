@@ -21,7 +21,7 @@
     }
 
     public function toString() {
-      echo "Sesión: $this->name, Precio por sesión: " . round($this->basePrice / $this->totalSessions, 2) . "€, Sesiones restantes: $this->remainingSessiones\n";
+      echo "Sesión: $this->name, Precio por sesión: " . round($this->basePrice / $this->totalSessions, 2) . "€, Sesiones restantes: $this->remainingSessiones\n<br>";
   }
   }
 ?>
