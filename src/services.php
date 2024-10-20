@@ -1,17 +1,17 @@
 <?php
   namespace Dsw\Shop;
 
-  class Services extends Elements {
-    private $name;
-    private $basePrice;
-    private $tax = 0.07;
+  use Element;
+
+  class Services extends Element {
 
     function __construct($name, $basePrice)
     {
-      $this->name = $name;
-      $this->basePrice = $basePrice;
+      parent::__construct($name, $basePrice);
     }
      
-    abstract public function toString();
+    public function toString() {
+      echo 'Nombre del servicio: ' . $this->name . ' precio: ' . $this->getFinalPrice() . '€ \n';
+    }
   }
 ?>
