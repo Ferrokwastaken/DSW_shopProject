@@ -14,8 +14,9 @@ abstract class Element {
     }
 
     public function getFinalPrice() {
-        return ($this->basePrice * $this->tax);
+        return round($this->basePrice * (1 + self::$tax));
     }
 
     abstract public function tostring();
 }
+?>
