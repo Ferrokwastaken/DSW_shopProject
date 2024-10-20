@@ -6,7 +6,7 @@
     {
       parent::__construct($name, $basePrice);
     }
-
+     
     abstract public function toString();
   }
 ?>
