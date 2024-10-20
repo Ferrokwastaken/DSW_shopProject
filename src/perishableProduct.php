@@ -27,7 +27,7 @@ class perishableProducts extends Products {
 
     public function toString() {
         $expired = (new DateTime() > $this->expiredDate) ? "Caducado" : "Válido";
-        echo "Producto Perecedero: $this->name, Marca: $this->manufactor, Precio: " . $this->getFinalPrice() . "€, Envío: " . $this->shippingCost() . "€, Estado: $expired\n";
+        echo "Producto Perecedero: $this->name, Marca: $this->manufactor, Precio: " . $this->getFinalPrice() . "€, Envío: " . $this->shippingCost() . "€, Estado: $expired\n<br>";
     }
 }
 ?>

@@ -8,7 +8,7 @@
     }
 
     public function toString() {
-      echo "Servicio Normal: $this->name, Precio: " . $this->getFinalPrice() . "€\n";
+      echo "Servicio Normal: $this->name, Precio: " . $this->getFinalPrice() . "€\n<br>";
     }
   }
 ?>

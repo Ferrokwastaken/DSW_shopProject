@@ -15,13 +15,13 @@ class Products extends Element {
 
   public function shippingCost() // ($basePrice, $weight, $volume) : Float
   {
-    $costWeight = ($this->weight * 0.0002);
+    $costWeight = (float) $this->weight * 0.0002;
     $costVolume = floor($this->volume/1000);
     return round(2 + $costWeight + $costVolume, 2);
   }
 
   public function toString() {
-    echo "Producto: $this->name, Marca: $this->manufactor, Precio: " . $this->getFinalPrice() . "€, Coste Envío: " . $this->shippingCost() . "€\n";
+    echo "Producto: $this->name, Marca: $this->manufactor, Precio: " . $this->getFinalPrice() . "€, Coste Envío: " . $this->shippingCost() . "€\n<br>";
 }
 }
 ?>
